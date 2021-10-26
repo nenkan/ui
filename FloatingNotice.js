@@ -2,8 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import '@nenkan/css/floating-notice.scss';
-
 class FloatingNotice extends React.Component {
   constructor(props) {
     super(props);
