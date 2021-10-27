@@ -9,9 +9,14 @@
   "author": "nenkan",
   "license": "UNLICENSED",
   "dependencies": {
+    "@babel/preset-react": "^7.14.5",
     "@nenkan/css": "file:../css",
     "classnames": "^2.3.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2"
+  },
+  "source": true,
+  "devDependencies": {
+    "@babel/core": "^7.15.8"
   }
 }
