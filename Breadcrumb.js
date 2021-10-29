@@ -15,7 +15,7 @@ function Breadcrumb(props) {
                 <li className="breadcrumb__item--divider">/</li>
               )}
               <li className={active ? 'breadcrumb__item--active' : ''} aria-current={active ? 'page' : undefined}>
-                {child}
+                {typeof child === 'function' ? child() : child}
               </li>
             </React.Fragment>
           );
