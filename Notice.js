@@ -13,7 +13,7 @@ function Notice(props) {
   return (
     <div className={classNames('notice', { 'notice--danger': props.modifier === 'danger', 'notice--floating': props.floating }, props.className)}>
       <div className="notice__message">{props.children}</div>
-      {props.dismissable && (
+      {(props.dismissable == null ? props.floating : props.dismissable) && (
         <button className="notice__close-button" type="button" onClick={() => setClosed(true)}>X</button>
       )}
     </div>
@@ -29,7 +29,6 @@ Notice.propTypes = {
 };
 
 Notice.defaultProps = {
-  dismissable: false,
   floating: false,
 };
 

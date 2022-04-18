@@ -24,3 +24,10 @@ export const NoticeFloatingDismissableExample = () => (
     <Notice dismissable floating>This is a really, really, really, really, really, really, really, really, really, really, really, really, really, really, really, really, really, really, really, really, really, long text</Notice>
   </>
 )
+
+export const NoticeFloatingDismissableByDefaultExample = () => (
+  <>
+    <div>This is initially hidden by the notice</div>
+    <Notice floating>Floating is dismissable by default unless opted out</Notice>
+  </>
+)
