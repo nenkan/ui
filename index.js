@@ -2,7 +2,6 @@ export { default as Breadcrumb } from './Breadcrumb';
 export { default as Container } from './Container';
 export { default as ErrorDialog } from './ErrorDialog';
 export { default as ErrorNotice } from './ErrorNotice';
-export { default as FloatingNotice } from './FloatingNotice';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as MarkdownRegion } from './MarkdownRegion';
