@@ -3,7 +3,7 @@ import React from 'react';
 export default function Table() {
 
   return (
-    <table className = "table"> 
+    <table className="table"> 
 
         <tr> 
 
@@ -27,7 +27,7 @@ export default function Table() {
 
         <tr> 
 
-          <td>Megha</td> 
+          <td>Meghna</td> 
 
           <td>19</td> 
 
