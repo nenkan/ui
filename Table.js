@@ -1,47 +1,47 @@
 import React from 'react';
 
-export default function Table() {
+export default function Table(props) {
 
   return (
     <table className="table"> 
 
         <tr> 
 
-          <th>Name</th> 
+          <th>{props.children}</th> 
 
-          <th>Age</th> 
+          <th>{props.children}</th> 
 
-          <th>Gender</th> 
-
-        </tr> 
-
-        <tr> 
-
-          <td>Anom</td> 
-
-          <td>19</td> 
-
-          <td>Male</td> 
+          <th>{props.children}</th> 
 
         </tr> 
 
         <tr> 
 
-          <td>Meghna</td> 
+          <td>{props.children}</td> 
 
-          <td>19</td> 
+          <td>{props.children}</td> 
 
-          <td>Female</td> 
+          <td>{props.children}</td> 
 
         </tr> 
 
         <tr> 
 
-          <td>Subham</td> 
+          <td>{props.children}</td> 
 
-          <td>25</td> 
+          <td>{props.children}</td> 
 
-          <td>Male</td> 
+          <td>{props.children}</td> 
+
+        </tr> 
+
+        <tr> 
+
+          <td>{props.children}</td> 
+
+          <td>{props.children}</td> 
+
+          <td>{props.children}</td> 
 
         </tr> 
 
