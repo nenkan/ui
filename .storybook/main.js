@@ -8,5 +8,17 @@ module.exports = {
     "@storybook/addon-essentials",
     '@storybook/preset-scss'
   ],
-  "framework": "@storybook/react"
+  "framework": "@storybook/react",
+  webpackFinal(config, { configType }) {
+    if (configType === 'PRODUCTION') {
+      config.output.publicPath = '/ui/'
+    }
+    return config;
+  },
+  managerWebpack(config, { configType }) {
+    if (configType === 'PRODUCTION') {
+      config.output.publicPath = '/ui/'
+    }
+    return config;
+  }
 }
