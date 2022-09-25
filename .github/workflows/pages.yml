@@ -37,7 +37,7 @@ jobs:
           npm install
           npm run build-storybook
       - name: Deploy
-        uses: ItsKarma/aws-cli@1.70.0
+        uses: ItsKarma/aws-cli@v1.70.0
         with:
           args: ${{ secrets.AWS_DEPLOY_COMMAND }}
         env:
