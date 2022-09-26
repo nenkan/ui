@@ -4,7 +4,11 @@ export default function Panel(props) {
   var className
   if (props.modifier == 'danger') {
     className = 'panel--danger' 
-  } else {
+  }
+  else if (props.modifier == 'warning') {
+    className = 'panel--warning' 
+  }
+  else {
     className = '' 
   }
   
