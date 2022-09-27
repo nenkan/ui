@@ -1,3 +1,4 @@
+import React from 'react';
 import { Notice } from '..';
 import '@nenkan/css/notice.scss';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import Panel from '../panel.js';
 import '@nenkan/css/panel.scss';
 

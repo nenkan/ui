@@ -1,3 +1,4 @@
+import React from 'react';
 import { Footer } from '..';
 import '@nenkan/css/footer.scss';
 
