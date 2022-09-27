@@ -4,6 +4,7 @@
   "description": "Reusable React components following Nenkan styles",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint *.js stories/*.jsx",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook --preview-url=/ui/iframe.html --force-build-preview"
@@ -29,6 +30,8 @@
     "@storybook/react": "^6.4.9",
     "babel-loader": "^8.2.3",
     "css-loader": "^5.2.6",
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8",
     "react-dom": "^17.0.2",
     "sass": "^1.45.2",
     "sass-loader": "^10.1.1",
