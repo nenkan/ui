@@ -32,7 +32,7 @@ function Breadcrumb(props) {
             <BreadcrumbItem key={index} active={index === children.length - 1}>
               {typeof child === 'function' ? child() : child}
             </BreadcrumbItem>
-          )
+          );
 
           return list.concat(items);
         }, [])}
