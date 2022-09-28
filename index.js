@@ -1,5 +1,5 @@
 export { default as Breadcrumb } from './Breadcrumb';
-export { default as Container } from './Container';
+export { default as Container } from './container';
 export { default as Footer } from './Footer';
 export { default as Header } from './header';
 export { default as MarkdownRegion } from './markdown-region';
