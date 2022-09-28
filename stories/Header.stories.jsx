@@ -6,5 +6,5 @@ export default {
   title: 'Header'
 };
 
-export const HeaderExample = () => <Header>Title</Header>
+export const HeaderExample = () => <Header>Title</Header>;
 
