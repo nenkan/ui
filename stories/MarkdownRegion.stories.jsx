@@ -8,4 +8,4 @@ export default {
   component: MarkdownRegion,
 };
 
-export const MarkdownRegionExample = () => <MarkdownRegion source={markdownTest.source} />
+export const MarkdownRegionExample = () => <MarkdownRegion source={markdownTest.source} />;
