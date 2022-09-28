@@ -1,4 +1,4 @@
-import { header } from ".."
+import { Header } from ".."
 import '@nenkan/css/header.scss';
 
 export default {
