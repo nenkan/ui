@@ -12,7 +12,7 @@ function Notice(props) {
   const onCloseClick = () => {
     setClosed(true);
     props.onDismiss && props.onDismiss();
-  }
+  };
 
   //todo: warning icon
   return (
@@ -22,7 +22,7 @@ function Notice(props) {
         <button className="notice__close-button" type="button" onClick={onCloseClick} aria-label="close notice" title="close notice">X</button>
       )}
     </div>
-  )
+  );
 }
 
 Notice.propTypes = {
