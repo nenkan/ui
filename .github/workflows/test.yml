@@ -1,13 +1,9 @@
-name: eslint
 on:
-  push:
-    branches:
-      - master
   pull_request:
-    branches:
-      - master
+    branches: ["master"]
+
 jobs:
-  eslint:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -17,4 +13,5 @@ jobs:
         with:
           node-version: "16"
       - run: npm ci
-      - run: npm run lint
+      - run: npm run storybook &
+      - run: npm run test
