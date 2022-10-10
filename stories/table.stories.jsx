@@ -1,5 +1,6 @@
 import React from 'react';
 import {Table} from  '..';
+import '@nenkan/css/table.scss';
 
 export default {
   title: 'Table'
