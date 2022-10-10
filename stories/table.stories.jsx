@@ -29,5 +29,5 @@ export function TableExample() {
         </tr>
       </tbody>
     </Table>
-   );
+  );
 }
