@@ -10,6 +10,7 @@
     "build-storybook": "build-storybook --preview-url=/ui/iframe.html --force-build-preview"
   },
   "author": "nenkan",
+  "homepage": "https://www.nen-kan.com/ui",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.3.2",
