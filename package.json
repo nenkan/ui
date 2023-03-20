@@ -1,9 +1,10 @@
 {
   "name": "@nenkan/ui",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Reusable React components following Nenkan styles",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "babel src --out-dir dist --copy-files",
     "lint": "eslint *.js stories/*.jsx",
     "test": "wait-on http://localhost:6006 && test-storybook",
     "storybook": "start-storybook -p 6006",
@@ -24,7 +25,8 @@
   },
   "source": true,
   "devDependencies": {
-    "@babel/core": "^7.20.2",
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
     "@babel/preset-react": "^7.18.6",
     "@nenkan/css": "^0.11.2",
     "@storybook/addon-actions": "^6.5.13",
