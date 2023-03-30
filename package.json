@@ -3,9 +3,12 @@
   "version": "0.6.0",
   "description": "Reusable React components following Nenkan styles",
   "main": "dist/index.js",
+  "private": true,
   "scripts": {
-    "build": "babel src --out-dir dist --copy-files",
+    "build": "node ./scripts/clean.js && babel src --out-dir dist --copy-files --source-maps && node ./scripts/build.js",
+    "build:watch": "nodemon --watch src --exec npm run build",
     "lint": "eslint *.js stories/*.jsx",
+    "release": "npm run build && cd dist && npm publish",
     "test": "wait-on http://localhost:6006 && test-storybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook --preview-url=/ui/iframe.html --force-build-preview",
@@ -43,13 +46,11 @@
     "css-loader": "^6.7.2",
     "eslint": "^8.28.0",
     "eslint-plugin-react": "^7.31.11",
+    "nodemon": "^2.0.22",
     "react-dom": "^18.2.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "wait-on": "^6.0.1"
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }
