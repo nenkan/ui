@@ -43,7 +43,7 @@
     "@storybook/test-runner": "^0.10.0",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.3",
-    "eslint": "^8.28.0",
+    "eslint": "^8.39.0",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-storybook": "^0.6.11",
     "nodemon": "^2.0.22",
