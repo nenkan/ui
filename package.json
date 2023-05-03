@@ -51,7 +51,7 @@
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "storybook": "^7.0.7",
-    "style-loader": "^3.3.1",
+    "style-loader": "^3.3.2",
     "wait-on": "^6.0.1"
   }
 }
