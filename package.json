@@ -39,7 +39,7 @@
     "@storybook/cli": "^7.0.7",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.0.7",
-    "@storybook/react-webpack5": "^7.0.7",
+    "@storybook/react-webpack5": "^7.0.13",
     "@storybook/test-runner": "^0.10.0",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.3",
