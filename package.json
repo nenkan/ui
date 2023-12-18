@@ -45,7 +45,7 @@
     "css-loader": "^6.7.3",
     "eslint": "^8.40.0",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-storybook": "^0.6.11",
+    "eslint-plugin-storybook": "^0.6.13",
     "nodemon": "^2.0.22",
     "react-dom": "^18.2.0",
     "sass": "^1.63.3",
