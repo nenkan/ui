@@ -11,7 +11,11 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "20"
+      - run: echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: npm ci
+      # Note: making it a background process like this, you'll miss any problems that might occur in the command
       - run: npm run storybook &
       - run: npm run test
