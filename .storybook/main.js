@@ -1,6 +1,12 @@
 module.exports = {
-  "stories": ["../stories/**/*.stories.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
-  "addons": ["@storybook/addon-links", "@storybook/addon-essentials", '@storybook/preset-scss', "@storybook/addon-mdx-gfm"],
+  "stories": ["../stories/**/*.stories.@(js|jsx|ts|tsx)"],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    '@storybook/preset-scss',
+    "@storybook/addon-webpack5-compiler-babel",
+    "@chromatic-com/storybook"
+  ],
   "framework": {
     name: "@storybook/react-webpack5",
     options: {}
