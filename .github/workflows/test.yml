@@ -12,6 +12,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
+      - run: echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: npm ci
       - run: npm run storybook &
       - run: npm run test
