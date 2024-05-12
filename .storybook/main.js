@@ -15,7 +15,7 @@ module.exports = {
     configType
   }) {
     if (configType === 'PRODUCTION') {
-      config.output.publicPath = 'ui/';
+      config.output.publicPath = '/ui/';
     }
     return config;
   },
@@ -23,7 +23,7 @@ module.exports = {
     configType
   }) {
     if (configType === 'PRODUCTION') {
-      config.output.publicPath = 'ui/';
+      config.output.publicPath = '/ui/';
     }
     return config;
   },
