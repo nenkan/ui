@@ -16,6 +16,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: npm ci
+        working-directory: storybook
       # Note: making it a background process like this, you'll miss any problems that might occur in the command
       - run: npm run storybook &
+        working-directory: storybook
       - run: npm run test
+        working-directory: storybook
