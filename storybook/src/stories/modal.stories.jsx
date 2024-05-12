@@ -1,7 +1,6 @@
 import React from 'react';
+import Modal from '../../../src/modal';
 import '@nenkan/css/modal.scss';
-
-import { Modal } from '../src';
 
 export default {
   title: 'Modal'

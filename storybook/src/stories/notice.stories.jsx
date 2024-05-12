@@ -1,5 +1,5 @@
 import React from 'react';
-import { Notice } from '../src';
+import Notice from '../../../src/notice';
 import '@nenkan/css/notice.scss';
 
 export default {

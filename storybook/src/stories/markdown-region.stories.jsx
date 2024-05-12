@@ -1,5 +1,5 @@
 import React from 'react';
-import { MarkdownRegion } from '../src';
+import MarkdownRegion from '../../../src/markdown-region';
 import markdownTest from './TEST.md.js';
 import '@nenkan/css/markdown-region.scss';
 

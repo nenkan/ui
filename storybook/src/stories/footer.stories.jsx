@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer } from '../src';
+import Footer from '../../../src/footer';
 import '@nenkan/css/footer.scss';
 
 export default {

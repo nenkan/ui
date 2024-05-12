@@ -1,5 +1,5 @@
 import React from 'react';
-import Panel from '../src/panel.js';
+import Panel from '../../../src/panel';
 import '@nenkan/css/panel.scss';
 
 export default {
