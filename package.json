@@ -11,7 +11,8 @@
     "release": "npm run build && cd dist && npm publish",
     "test": "wait-on http://localhost:6006 && test-storybook",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --preview-url=/ui/iframe.html --force-build-preview"
+    "build-storybook": "storybook build --preview-url=/ui/iframe.html --force-build-preview",
+    "postbuild:storybook": "perl -i -p -e 's#<head>#<head>\n\t\t<base href='/ui/'>#' ./storybook-static/index.html"
   },
   "author": "nenkan",
   "homepage": "https://www.nen-kan.com/ui",
