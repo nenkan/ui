@@ -11,22 +11,22 @@ module.exports = {
     name: "@storybook/react-webpack5",
     options: {}
   },
-  // webpackFinal(config, {
-  //   configType
-  // }) {
-  //   if (configType === 'PRODUCTION') {
-  //     config.output.publicPath = '/ui/';
-  //   }
-  //   return config;
-  // },
-  // managerWebpack(config, {
-  //   configType
-  // }) {
-  //   if (configType === 'PRODUCTION') {
-  //     config.output.publicPath = '/ui/';
-  //   }
-  //   return config;
-  // },
+  webpackFinal(config, {
+    configType
+  }) {
+    if (configType === 'PRODUCTION') {
+      config.output.publicPath = 'ui/';
+    }
+    return config;
+  },
+  managerWebpack(config, {
+    configType
+  }) {
+    if (configType === 'PRODUCTION') {
+      config.output.publicPath = 'ui/';
+    }
+    return config;
+  },
   docs: {
     autodocs: true
   }
