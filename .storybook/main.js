@@ -24,6 +24,7 @@ module.exports = {
   }) {
     if (configType === 'PRODUCTION') {
       config.output.publicPath = '/ui/';
+      config.base = '/ui/';
     }
     return config;
   },
