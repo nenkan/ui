@@ -4,6 +4,7 @@ on:
 
 jobs:
   test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -17,8 +18,10 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: npm ci
         working-directory: storybook
-      # Note: making it a background process like this, you'll miss any problems that might occur in the command
-      - run: npm run storybook &
+      - run: npx playwright install --with-deps
         working-directory: storybook
-      - run: npm run test
+      # Note: making it a background process like this, you'll miss any problems that might occur in the command
+      - run: npm run build-storybook --quiet
+        working-directory: storybook
+      - run: npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" "npx http-server storybook-static --port 6006 --silent" "npx wait-on tcp:6006 && yarn test-storybook"
         working-directory: storybook
