@@ -8,7 +8,6 @@ module.exports = {
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:storybook/recommended'
   ],
   'ignorePatterns': [
     '.eslintrc.js',
@@ -43,5 +42,10 @@ module.exports = {
         'error',
         'always'
       ]
-  }
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };
