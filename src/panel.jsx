@@ -1,15 +1,12 @@
 import React from 'react';
 
 export default function Panel(props) {
-  var className;
+  let className = props.className || '';
   if (props.modifier == 'danger') {
-    className = 'panel--danger'; 
+    className = ('panel--danger ' + className).trim(); 
   }
   else if (props.modifier == 'warning') {
-    className = 'panel--warning'; 
-  }
-  else {
-    className = ''; 
+    className = ('panel--warning ' + className).trim(); 
   }
   
   return (
