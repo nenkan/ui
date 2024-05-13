@@ -36,17 +36,17 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - name: Build
+        working-directory: storybook
         run: |
           npm ci
           npm run build-storybook
-        working_directory: storybook
       - name: Deploy
         run: ${{ secrets.AWS_DEPLOY_COMMAND }}
+        working-directory: storybook
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: "us"
-        working_directory: storybook
 
       # - name: Upload artifact
       #   uses: actions/upload-pages-artifact@v1
