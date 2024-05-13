@@ -17,7 +17,12 @@ function Notice(props) {
 
   //todo: warning icon
   return (
-    <div className={classNames('notice', { 'notice--danger': props.modifier === 'danger', 'notice--warning': props.modifier === 'warning', 'notice--floating': props.floating }, props.className)}>
+    <div className={classNames('notice', {
+      'notice--danger': props.modifier === 'danger',
+      'notice--warning': props.modifier === 'warning',
+      'notice--success': props.modifier === 'success',
+      'notice--floating': props.floating
+    }, props.className)}>
       {props.showIcon && <GoAlert className="notice__icon" />}
       <div className="notice__message">{props.children}</div>
       {(props.dismissable == null ? props.floating : props.dismissable) && (
@@ -32,7 +37,7 @@ Notice.propTypes = {
   className: PropTypes.string,
   dismissable: PropTypes.bool,
   floating: PropTypes.bool,
-  modifier: PropTypes.oneOf(['danger', 'warning']),
+  modifier: PropTypes.oneOf(['danger', 'success', 'warning']),
   onDismiss: PropTypes.func,
   showIcon: PropTypes.bool,
 };
