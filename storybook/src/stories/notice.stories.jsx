@@ -5,19 +5,30 @@ import '@nenkan/css/notice.scss';
 export default {
   title: 'Notice',
   component: Notice,
+  args: {
+    className: '',
+    children: 'Title',
+    dismissable: false,
+    floating: false,
+    showIcon: false,
+  },
 };
 
-export const NoticeExample = () => (
-  <Notice>Title</Notice>
-);
+export const NoticeExample = {};
 
-export const NoticeDangerExample = () => (
-  <Notice modifier="danger">Danger</Notice>
-);
+export const NoticeDangerExample = {
+  args: {
+    modifier: 'danger',
+    children: 'Danger',
+  },
+};
 
-export const NoticeDismissableExample = () => (
-  <Notice dismissable>Dismissable</Notice>
-);
+export const NoticeDismissableExample = {
+  args: {
+    dismissable: true,
+    children: 'Dismissable',
+  },
+};
 
 export const NoticeFloatingDismissableExample = () => (
   <>

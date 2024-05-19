@@ -1,9 +1,13 @@
-import React from 'react';
 import Footer from '../../../src/footer';
 import '@nenkan/css/footer.scss';
 
 export default {
-  title: 'Footer'
+  title: 'Footer',
+  component: Footer,
+  args: {
+    className: '',
+    children: 'Title',
+  },
 };
 
-export const FooterExample = () => <Footer>Title</Footer>;
+export const FooterExample = {};

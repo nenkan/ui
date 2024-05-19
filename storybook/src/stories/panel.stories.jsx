@@ -1,19 +1,34 @@
-import React from 'react';
 import Panel from '../../../src/panel';
 import '@nenkan/css/panel.scss';
 
 export default {
-  title: 'Panel'
+  title: 'Panel',
+  component: Panel,
+  args: {
+    children: 'Lorem ipsum',
+  },
+  argTypes: {
+    modifier: {
+      control: {
+        type: 'select',
+      },
+      options: ['danger', 'warning'],
+    },
+  },
 };
 
-export const PanelExample = function() {
-  return <Panel>Lorem ipsum</Panel>;
+export const PanelExample = {};
+
+export const PanelExampleDanger = {
+  args: {
+    modifier: 'danger',
+    children: 'Lorem ipsum danger',
+  },
 };
 
-export const PanelExampleDanger = function() {
-  return <Panel modifier="danger">Lorem ipsum danger</Panel>;
-};
-
-export const PanelExampleWarning = function() {
-  return <Panel modifier="warning">Lorem ipsum warning</Panel>;
+export const PanelExampleWarning = {
+  args: {
+    modifier: 'warning',
+    children: 'Lorem ipsum warning',
+  },
 };

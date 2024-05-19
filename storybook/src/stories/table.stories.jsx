@@ -3,12 +3,13 @@ import Table from  '../../../src/table';
 import '@nenkan/css/table.scss';
 
 export default {
-  title: 'Table'
-};
-
-export function TableExample() {
-  return (
-    <Table>
+  title: 'Table',
+  component: Table,
+  args: {
+    className: '',
+  },
+  render: (props) => (
+    <Table {...props}>
       <thead>
         <tr>
           <th>Lorem</th>
@@ -30,5 +31,7 @@ export function TableExample() {
         </tr>
       </tbody>
     </Table>
-  );
-}
+  ),
+};
+
+export const TableExample = {};
