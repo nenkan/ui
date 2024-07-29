@@ -39,7 +39,7 @@
     "nodemon": "^2.0.22",
     "react-dom": "^18.2.0",
     "sass": "^1.63.3",
-    "sass-loader": "^13.2.2",
+    "sass-loader": "^16.0.0",
     "style-loader": "^3.3.2"
   }
 }
