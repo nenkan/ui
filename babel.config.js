@@ -1,6 +1,6 @@
-module.exports = {
+export default {
   "presets": [
-    "@babel/preset-env",
+    ["@babel/preset-env", { modules: false }],
     "@babel/preset-react"
   ]
 }
