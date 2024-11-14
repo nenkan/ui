@@ -28,18 +28,18 @@ async function copyOtherFiles() {
   }
 }
 
-// Replace "main": "dist/index.js" with "main": "index.js"
-async function updatePackageJsonMain() {
+// Replace "exports": "./dist/index.js" with "main": "./index.js"
+async function updatePackageJsonExports() {
   const packageJsonPath = path.join(buildDirectory, 'package.json');
   const packageJsonString = await fs.promises.readFile(packageJsonPath, { encoding: 'utf-8' });
   const packageJson = JSON.parse(packageJsonString);
-  packageJson.main = packageJson.main.replace(/dist\//, '');
+  packageJson.main = packageJson.exports.replace(/dist\//, '');
   await fs.promises.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2), { encoding: 'utf-8' });
 }
 
 async function build() {
   await copyOtherFiles();
-  await updatePackageJsonMain();
+  await updatePackageJsonExports();
 }
 
 build();
