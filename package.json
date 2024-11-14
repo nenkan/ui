@@ -1,6 +1,6 @@
 {
   "name": "@nenkan/ui",
-  "version": "0.21.4",
+  "version": "0.22.0",
   "description": "Reusable React components following Nenkan styles",
   "exports": "./dist/index.js",
   "private": true,
