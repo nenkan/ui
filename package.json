@@ -10,6 +10,7 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "release": "npm run build && cd dist && npm publish"
   },
+  "type": "module",
   "author": "nenkan",
   "homepage": "https://www.nen-kan.com/ui",
   "license": "MIT",
