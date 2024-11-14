@@ -33,7 +33,7 @@ async function updatePackageJsonExports() {
   const packageJsonPath = path.join(buildDirectory, 'package.json');
   const packageJsonString = await fs.promises.readFile(packageJsonPath, { encoding: 'utf-8' });
   const packageJson = JSON.parse(packageJsonString);
-  packageJson.main = packageJson.exports.replace(/dist\//, '');
+  packageJson.exports = packageJson.exports.replace(/dist\//, '');
   await fs.promises.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2), { encoding: 'utf-8' });
 }
 
