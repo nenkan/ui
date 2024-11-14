@@ -5,7 +5,7 @@
   "exports": "./dist/index.js",
   "private": true,
   "scripts": {
-    "build": "node ./scripts/clean.js && babel src --out-dir dist --copy-files --source-maps && node ./scripts/build.js",
+    "build": "node ./scripts/clean.js && babel src --out-dir dist --copy-files --source-maps --extensions \".ts,.tsx\" && node ./scripts/build.js",
     "build:watch": "nodemon --watch src --exec npm run build",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "release": "npm run build && cd dist && npm publish"
@@ -31,6 +31,7 @@
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
+    "@babel/preset-typescript": "^7.26.0",
     "@nenkan/css": "^0.21.0",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
