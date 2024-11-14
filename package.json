@@ -2,7 +2,7 @@
   "name": "@nenkan/ui",
   "version": "0.21.0",
   "description": "Reusable React components following Nenkan styles",
-  "main": "dist/index.js",
+  "exports": "./dist/index.js",
   "private": true,
   "scripts": {
     "build": "node ./scripts/clean.js && babel src --out-dir dist --copy-files --source-maps && node ./scripts/build.js",
