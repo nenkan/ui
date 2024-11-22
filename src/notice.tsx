@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import { GoAlert } from 'react-icons/go';
 
 const NoticeDefaultProps = Object.freeze({
   floating: false,
 });
 
-function Notice(props) {
+interface NoticeProps {
+  children: React.ReactNode; // a union of all the possible types that can be passed as children in JSX
+  className: string;
+  dismissable: boolean;
+  floating: boolean;
+  modifier: 'danger' | 'warning' | 'success';
+  onDismiss: () => void;
+  showIcon: boolean;
+}
+
+function Notice(props: NoticeProps) {
   const [closed, setClosed] = useState(false);
 
   if (closed) {
@@ -37,15 +46,5 @@ function Notice(props) {
     </div>
   );
 }
-
-Notice.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  dismissable: PropTypes.bool,
-  floating: PropTypes.bool,
-  modifier: PropTypes.oneOf(['danger', 'success', 'warning']),
-  onDismiss: PropTypes.func,
-  showIcon: PropTypes.bool,
-};
 
 export default Notice;
