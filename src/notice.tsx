@@ -3,6 +3,10 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { GoAlert } from 'react-icons/go';
 
+const NoticeDefaultProps = Object.freeze({
+  floating: false,
+});
+
 function Notice(props) {
   const [closed, setClosed] = useState(false);
 
@@ -15,17 +19,19 @@ function Notice(props) {
     props.onDismiss && props.onDismiss();
   };
 
+  const floating = props.floating || NoticeDefaultProps.floating;
+
   //todo: warning icon
   return (
     <div className={classNames('notice', {
       'notice--danger': props.modifier === 'danger',
       'notice--warning': props.modifier === 'warning',
       'notice--success': props.modifier === 'success',
-      'notice--floating': props.floating
+      'notice--floating': floating
     }, props.className)}>
       {props.showIcon && <GoAlert className="notice__icon" />}
       <div className="notice__message">{props.children}</div>
-      {(props.dismissable == null ? props.floating : props.dismissable) && (
+      {(props.dismissable == null ? floating : props.dismissable) && (
         <button className="notice__close-button" type="button" onClick={onCloseClick} aria-label="close notice" title="close notice">X</button>
       )}
     </div>
@@ -40,10 +46,6 @@ Notice.propTypes = {
   modifier: PropTypes.oneOf(['danger', 'success', 'warning']),
   onDismiss: PropTypes.func,
   showIcon: PropTypes.bool,
-};
-
-Notice.defaultProps = {
-  floating: false,
 };
 
 export default Notice;
