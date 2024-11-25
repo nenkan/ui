@@ -3,6 +3,7 @@ export { default as Button } from './button.js';
 export { default as Container } from './container.js';
 export { default as Footer } from './footer.js';
 export { default as Header } from './header.js';
+export { default as Input } from './input.js';
 export { default as MarkdownRegion } from './markdown-region.js';
 export { default as Modal } from './modal.js';
 export { default as Notice } from './notice.js';
