@@ -9,5 +9,5 @@ export default function Input(props) {
       className={classNames('input', className)}
       {...otherProps}
     />
-  )
+  );
 }
