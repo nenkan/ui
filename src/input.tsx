@@ -6,7 +6,7 @@ export default function Input(props) {
 
   return (
     <input
-      className={classNames('input', props.className)}
+      className={classNames('input', className)}
       {...otherProps}
     />
   )
