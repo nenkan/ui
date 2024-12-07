@@ -11,7 +11,7 @@ interface NoticeProps {
   className: string;
   dismissable: boolean;
   floating: boolean;
-  modifier: 'danger' | 'warning' | 'success';
+  modifier: 'danger' | 'info' | 'warning' | 'success';
   onDismiss: () => void;
   showIcon: boolean;
 }
@@ -34,6 +34,7 @@ function Notice(props: NoticeProps) {
   return (
     <div className={classNames('notice', {
       'notice--danger': props.modifier === 'danger',
+      'notice--info': props.modifier === 'info',
       'notice--warning': props.modifier === 'warning',
       'notice--success': props.modifier === 'success',
       'notice--floating': floating
