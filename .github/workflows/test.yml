@@ -12,7 +12,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
       - run: echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
