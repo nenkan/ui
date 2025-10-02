@@ -39,7 +39,7 @@
     "eslint-plugin-react": "^7.37.2",
     "globals": "^16.4.0",
     "nodemon": "^3.1.7",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.2.0",
     "sass": "^1.93.2",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
