@@ -11,6 +11,12 @@ updates:
       interval: "weekly"
     registries:
       - "npm-github"
+    groups:
+      eslint:
+        patterns:
+          - "@eslint/js"
+          - "eslint"
+          - "typescript-eslint"
 registries:
   npm-github:
     type: npm-registry
