@@ -17,6 +17,10 @@ updates:
           - "@eslint/js"
           - "eslint"
           - "typescript-eslint"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
 registries:
   npm-github:
     type: npm-registry
