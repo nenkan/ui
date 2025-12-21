@@ -17,6 +17,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: npm ci
+      - run: npm ci
         working-directory: storybook
       - run: npx playwright install --with-deps
         working-directory: storybook
