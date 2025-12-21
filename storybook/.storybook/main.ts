@@ -32,10 +32,10 @@ const config: StorybookConfig = {
     config.resolve.dedupe = config.resolve.dedupe || [];
     config.resolve.dedupe.push('react', 'react-dom');
     
-    // Optimize for React 19 features
+    // Optimize for React 19 features and include commonly used dependencies
     if (config.optimizeDeps) {
       config.optimizeDeps.include = config.optimizeDeps.include || [];
-      config.optimizeDeps.include.push('react', 'react-dom');
+      config.optimizeDeps.include.push('react', 'react-dom', 'classnames');
     }
     
     return config;
