@@ -11,7 +11,34 @@ const config: StorybookConfig = {
 
   framework: {
     name: "@storybook/react-vite",
-    options: {},
+    options: {
+      builder: {
+        viteConfigPath: undefined // Use Storybook's built-in Vite config
+      }
+    },
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    },
+  },
+
+  viteFinal: async (config) => {
+    // React 19 optimizations
+    config.resolve = config.resolve || {};
+    config.resolve.dedupe = config.resolve.dedupe || [];
+    config.resolve.dedupe.push('react', 'react-dom');
+    
+    // Optimize for React 19 features
+    if (config.optimizeDeps) {
+      config.optimizeDeps.include = config.optimizeDeps.include || [];
+      config.optimizeDeps.include.push('react', 'react-dom');
+    }
+    
+    return config;
   }
 };
 export default config;
