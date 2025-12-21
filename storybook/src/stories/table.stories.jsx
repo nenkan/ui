@@ -1,5 +1,5 @@
 import React from 'react';
-import Table from  '../../../src/table';
+import Table from '../../../src/table';
 import '@nenkan/css/table.scss';
 
 export default {

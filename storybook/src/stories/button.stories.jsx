@@ -1,5 +1,6 @@
 import Button from '../../../src/button';
 import '@nenkan/css/button.scss';
+import { expect, userEvent, within } from 'storybook/test';
 
 export default {
   title: 'Button',
@@ -18,6 +19,20 @@ export default {
 };
 
 export const Plain = {};
+
+export const Interactive = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button');
+    
+    // Test that the button exists and has correct text
+    await expect(button).toBeInTheDocument();
+    await expect(button).toHaveTextContent('Button');
+    
+    // Test clicking the button
+    await userEvent.click(button);
+  }
+};
 
 export const Primary = {
   args: {
