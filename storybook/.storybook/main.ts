@@ -18,6 +18,15 @@ const config: StorybookConfig = {
     },
   },
 
+  // Configure manager for subpath deployment
+  managerHead: (head, { configType }) => {
+    const base = '/ui/';
+    if (configType === 'PRODUCTION') {
+      return `${head}<script>window.PREVIEW_URL = '${base}iframe.html'</script>`;
+    }
+    return head;
+  },
+
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
@@ -26,11 +35,10 @@ const config: StorybookConfig = {
     },
   },
 
-  viteFinal: async (config) => {
-    // Configure base path for production deployment
-    if (process.env.NODE_ENV === 'production') {
+  viteFinal: async (config, { configType }) => {
+    // Configure base path for iframe (stories) in production
+    if (configType === 'PRODUCTION') {
       config.base = '/ui/';
-      // Ensure proper public path
       config.build = config.build || {};
       config.build.outDir = '../storybook-static';
     }
