@@ -22,6 +22,7 @@ concurrency:
 jobs:
   # Build job
   build-and-deploy:
+    if: false # Skip this workflow for now because the /ui/ infix isnt getting added to storybook static website build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -46,7 +47,7 @@ jobs:
           cd storybook
           STORYBOOK_BASE_HREF=/ui/ npm run build-storybook
       - name: Deploy
-        run: ${{ secrets.AWS_DEPLOY_COMMAND }}
+        run: aws s3 cp storybook-static/ s3://www.nen-kan.com/ui/ --endpoint-url=http://us-southeast-1.linodeobjects.com --profile www.nen-kan.com --recursive --acl public-read
         working-directory: storybook
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
