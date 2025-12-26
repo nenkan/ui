@@ -40,6 +40,9 @@ jobs:
         working-directory: storybook
         run: |
           npm ci
+          cd ..
+          npm run build
+          cd storybook
           npm run build-storybook
       - name: Deploy
         run: ${{ secrets.AWS_DEPLOY_COMMAND }}
