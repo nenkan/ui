@@ -11,32 +11,6 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs"
   ],
-  "framework": "@storybook/react-vite",
-
-  // Configure for subpath deployment
-  managerHead: (head, { configType }) => {
-    const base = '/ui/';
-    if (configType === 'PRODUCTION') {
-      return `${head}<script>window.PREVIEW_URL = '${base}iframe.html'</script>`;
-    }
-    return head;
-  },
-
-  viteFinal: async (config, { configType }) => {
-    // Configure base path for iframe (stories) in production
-    if (configType === 'PRODUCTION') {
-      config.base = '/ui/';
-    }
-    return config;
-  },
-
-  // Configure manager webpack for main frame assets
-  managerWebpack: (config, { configType }) => {
-    if (configType === 'PRODUCTION') {
-      config.output = config.output || {};
-      config.output.publicPath = '/ui/';
-    }
-    return config;
-  }
+  "framework": "@storybook/react-vite"
 };
 export default config;
