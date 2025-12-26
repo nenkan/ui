@@ -27,6 +27,11 @@ const config: StorybookConfig = {
   },
 
   viteFinal: async (config) => {
+    // Configure base path for production deployment
+    if (process.env.NODE_ENV === 'production') {
+      config.base = '/ui/';
+    }
+    
     // React 19 optimizations
     config.resolve = config.resolve || {};
     config.resolve.dedupe = config.resolve.dedupe || [];
