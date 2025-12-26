@@ -22,6 +22,8 @@ jobs:
         working-directory: .
       - run: npm ci
         working-directory: storybook
+      - run: npx playwright install --with-deps
+        working-directory: storybook
       - run: npm run build-storybook
         working-directory: storybook
       - run: npm test
