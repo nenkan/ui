@@ -41,6 +41,7 @@ jobs:
         run: |
           npm ci
           cd ..
+          npm ci
           npm run build
           cd storybook
           npm run build-storybook
