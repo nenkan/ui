@@ -44,7 +44,7 @@ jobs:
           npm ci
           npm run build
           cd storybook
-          npm run build-storybook
+          STORYBOOK_BASE_HREF=/ui/ npm run build-storybook
       - name: Deploy
         run: ${{ secrets.AWS_DEPLOY_COMMAND }}
         working-directory: storybook

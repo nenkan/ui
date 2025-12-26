@@ -30,6 +30,9 @@ const config: StorybookConfig = {
     // Configure base path for production deployment
     if (process.env.NODE_ENV === 'production') {
       config.base = '/ui/';
+      // Ensure proper public path
+      config.build = config.build || {};
+      config.build.outDir = '../storybook-static';
     }
     
     // React 19 optimizations
