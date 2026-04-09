@@ -40,7 +40,7 @@
     "globals": "^17.4.0",
     "nodemon": "^3.1.11",
     "react-dom": "^19.2.3",
-    "sass": "^1.97.1",
+    "sass": "^1.99.0",
     "sass-loader": "^16.0.6",
     "style-loader": "^4.0.0",
     "typescript": "^5.9.3",
