@@ -12,6 +12,13 @@ updates:
     registries:
       - "npm-github"
     groups:
+      babel:
+        patterns:
+          - "@babel/cli"
+          - "@babel/core"
+          - "@babel/preset-env"
+          - "@babel/preset-react"
+          - "@babel/preset-typescript"
       eslint:
         patterns:
           - "@eslint/js"
