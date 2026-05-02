@@ -9,5 +9,6 @@ export { default as MarkdownRegion } from './markdown-region.js';
 export { default as Modal } from './modal.js';
 export { default as Notice } from './notice.js';
 export { default as Panel } from './panel.js';
+export { Pagination } from './pagination.js';
 export { default as Table } from './table.js';
 export { default as Textarea } from './textarea.js';
