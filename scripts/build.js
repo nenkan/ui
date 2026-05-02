@@ -17,7 +17,7 @@ const afterCopy = {
 }
 
 async function copyOtherFiles() {
-  const files = ['LICENSE.md', 'package.json', 'README.md'];
+  const files = ['LICENSE.md', 'package.json', 'README.md', '.npmrc', '.npmignore'];
 
   for (const file of files) {
     const destinationPath = path.join(buildDirectory, file);
