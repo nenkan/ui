@@ -4,6 +4,11 @@ This project contains React components that use the styles from [Nenkan CSS](htt
 
 You can use it as building blocks for a user interface.
 
+## Notable layout props
+
+- `Container` supports `variant="fixed" | "fluid"`.
+- `Header` supports `containerVariant="fixed" | "fluid"` and `innerClassName`.
+
 You can see the production storybook at https://www.nen-kan.com/ui
 
 ## Contributing
