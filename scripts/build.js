@@ -37,7 +37,25 @@ async function updatePackageJsonExports() {
   await fs.promises.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2), { encoding: 'utf-8' });
 }
 
+// Published code must use React's production JSX runtime. Babel 8 compiles JSX with
+// the development runtime (jsxDEV) unless told otherwise, and consumers' production
+// builds then fail with "_jsxDEV is not a function".
+async function assertProductionJsx() {
+  const files = await fs.promises.readdir(buildDirectory, { recursive: true });
+  const offenders = [];
+  for (const file of files.filter((name) => name.endsWith('.js'))) {
+    const content = await fs.promises.readFile(path.join(buildDirectory, file), { encoding: 'utf-8' });
+    if (content.includes('jsxDEV') || content.includes('react/jsx-dev-runtime')) {
+      offenders.push(file);
+    }
+  }
+  if (offenders.length > 0) {
+    throw new Error(`Development JSX runtime found in ${offenders.join(', ')}. Check the @babel/preset-react options in babel.config.js.`);
+  }
+}
+
 async function build() {
+  await assertProductionJsx();
   await copyOtherFiles();
   await updatePackageJsonExports();
 }
