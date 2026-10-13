@@ -23,14 +23,14 @@ jobs:
   # Build job
   build-and-deploy:
     if: false # Skip this workflow for now because the /ui/ infix isnt getting added to storybook static website build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       # - name: Setup Pages
       #   uses: actions/configure-pages@v2
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "25"
       - run: echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
