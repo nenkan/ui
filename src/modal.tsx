@@ -1,8 +1,23 @@
 import React from 'react';
 
 function Modal(props) {
+  const { onCancel } = props;
+
+  React.useEffect(() => {
+    function handleEscapeKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        onCancel();
+      }
+    }
+
+    document.addEventListener('keydown', handleEscapeKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKeyDown);
+    };
+  }, [onCancel]);
+
   function onCancelClick() {
-    props.onCancel();
+    onCancel();
   }
 
   return (
